@@ -7,3 +7,9 @@ bprob <- function(pop, prob){
  return(out)
 # could modify function to deal with Markovian temporary emigration
 }
+
+
+# not run:
+# adults <- 100
+# bprob(adults,.5) -> breeders
+

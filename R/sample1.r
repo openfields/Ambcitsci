@@ -15,3 +15,4 @@ nb1 <- nonbreedsurv(nonbreed0, Snonbreed, tr2br)
 
 breed1 <- b1$br + nb1$br
 nonbreed1 <- b1$non + nb1$non
+

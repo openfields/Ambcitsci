@@ -1,4 +1,5 @@
-popsim <- function(nyears, init_pop, dphi_sa, pr_b, nb_dphi, a_in_night_prob, a_rmort, a_in_num_guards, guard_limit){
+popsim <- function(nyears, init_pop, dphi_sa, pr_b, nb_dphi, a_in_night_prob, a_rmort, a_in_num_guards, guard_limit, a_p_dphi, p_days, fec, lmort, a_out_night_prob, rmort2, 
+                   a_out_nguard, ){
   # parameters for function: nyears (50?), init_pop, dphi (daily survival - possibly 3 different rates: adult pond/forest and met forest),
 
 
@@ -40,23 +41,23 @@ popsim <- function(nyears, init_pop, dphi_sa, pr_b, nb_dphi, a_in_night_prob, a_
     migrate(sum(potbreeders), a_in_night_prob, a_rmort, a_in_num_guards, guard_limit) -> breeders
 
     # adult survival in pond
-    dphi <- .99 # DAILY survival rate
-    days <- 21 # duration of breeding period
-    surv(sum(breeders), dphi, days) -> radults # remaining adults
+    # a_p_dphi <- .99 # DAILY survival rate
+    # p_days <- 21 # duration of breeding period
+    surv(sum(breeders), a_p_dphi, p_days) -> radults # remaining adults
 
     # breeding productivity: need to think about females/female in terms of breeding females/female metamorphs
-    fec <- 150
+    # fec <- 150
     fecund(breeders, fec) -> eggs
-    lmort <- .98 # think about losing ~7200/7300 eggs produced
+    # lmort <- .98 # think about losing ~7200/7300 eggs produced
     #sum(eggs)*(1-lmort) -> mets #metamorphs produced
     sum(rbinom(sum(eggs),1,(1-lmort))) -> mets
 
     # outbound adult mortality
-    np2 <- c(.6,.1,.1,.1,.1)
-    rmort2 <- .3
-    ng2 <- c(0,0,0,0,0)
-    gl2 <- 20
-    migrate(sum(radults), np2, rmort2, ng2, gl2) -> pbadults #post breeding adults
+    # np2 <- c(.6,.1,.1,.1,.1)
+    # rmort2 <- .3
+    # ng2 <- c(0,0,0,0,0)
+    # gl2 <- 20
+    migrate(sum(radults), a_out_night_prob, rmort2, a_out_nguard, guard_limit) -> pbadults #post breeding adults
 
     # outbound metamorph mortality
     np3 <- np2

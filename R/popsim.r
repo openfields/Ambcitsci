@@ -1,6 +1,26 @@
 popsim <- function(nyears, init_pop, dphi_sa, pr_b, nb_dphi, a_in_night_prob, a_rmort, a_in_num_guards, guard_limit, a_p_dphi, p_days, fec, lmort, a_out_night_prob, rmort2, 
                    a_out_nguard, met_night_prob, rmort_met, ng_met){
-  # parameters for function: nyears (50?), init_pop, dphi (daily survival - possibly 3 different rates: adult pond/forest and met forest),
+  
+  # parameters for function: 
+  # nyears: number of years to simulate population
+  # init_pop: initial population vector (adults, subadults)
+  # dphi_sa: daily survival for subadults
+  # pr_b: probability of adults choosing to breed
+  # nb_dphi: daily survival for nonbreeding adults
+  # a_in_night_prob: probability of adult moving into pond to breed on different nights [should sum to 1]
+  # a_rmort: road mortality for inbound adults
+  # a_in_num_guards: number of xing guards for inbound migration
+  # guard_limit: max number of individuals a guard can save on a night
+  # a_p_dphi: daily survival for adults in pond
+  # p_days: time (days) adults spend in pond
+  # fec: female eggs/female
+  # lmort: mortality from eggs to metamorphs
+  # a_out_night_prob: probability of adult moving out of pond on different nights
+  # rmort2: road mortality for outbound adults
+  # a_out_nguard: number of guards for outbound adults on different nights
+  # met_night_prob: probability of metamorphs moving out on different nights
+  # rmort_met: road mortality for metamorphs on different nights
+  # ng_met: number of xing guards for metamorphs on different nights
 
 
   # source other functions

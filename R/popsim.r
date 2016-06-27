@@ -1,5 +1,5 @@
 popsim <- function(nyears, init_pop, dphi_sa, pr_b, nb_dphi, a_in_night_prob, a_rmort, a_in_num_guards, guard_limit, a_p_dphi, p_days, fec, lmort, a_out_night_prob, rmort2, 
-                   a_out_nguard, ){
+                   a_out_nguard, met_night_prob, rmort_met, ng_met){
   # parameters for function: nyears (50?), init_pop, dphi (daily survival - possibly 3 different rates: adult pond/forest and met forest),
 
 
@@ -60,11 +60,11 @@ popsim <- function(nyears, init_pop, dphi_sa, pr_b, nb_dphi, a_in_night_prob, a_
     migrate(sum(radults), a_out_night_prob, rmort2, a_out_nguard, guard_limit) -> pbadults #post breeding adults
 
     # outbound metamorph mortality
-    np3 <- np2
-    rmort3 <- .3
-    ng3 <- c(0,0,0,0,0)
-    gl3 <- 20
-    migrate(mets, np3, rmort3, ng3, gl3) -> rmets
+    #np3 <- np2
+    #rmort3 <- .3
+    #ng3 <- c(0,0,0,0,0)
+    #gl3 <- 20
+    migrate(mets, met_night_prob, rmort_met, ng_met, guard_limit) -> rmets
 
     # adult survival during remainder of year after outbound migration
     dphi <- .99

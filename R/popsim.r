@@ -24,10 +24,10 @@ popsim <- function(nyears, init_pop, dphi_sa, pr_b, nb_dphi, a_in_night_prob, a_
 
 
   # source other functions
-  source("~/Documents/bignight/R/bprob.r")
-  source("~/Documents/bignight/R/migrate.r")
-  source("~/Documents/bignight/R/fecund.r")
-  source("~/Documents/bignight/R/surv.r")
+  source("~/Documents/Ambcitsci/R/bprob.r")
+  source("~/Documents/Ambcitsci/R/migrate.r")
+  source("~/Documents/Ambcitsci/R/fecund.r")
+  source("~/Documents/Ambcitsci/R/surv.r")
 
   # create object for output
   out <- matrix(NA, nrow=nyears, ncol=2)

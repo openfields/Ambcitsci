@@ -4,7 +4,7 @@ out[,,i] <- popsim(nyears=50, init_pop=c(100,100), dphi_sa = .9986, pr_b= .4230,
        a_rmort = 0.0407, a_in_num_guards = c(0,0,0), guard_limit = 10, a_p_dphi = 0.9994, p_days = 14, fec = 165, lmort = 0.0523, 
        a_out_night_prob = c(0.333,0.333,0.334), rmort2 = 0.0407, a_out_nguard = c(0,0,0), met_night_prob = c(0.333,0.333,0.334), 
        rmort_met = 0.0407, ng_met = c(0,0,0))
-})
+})  # 69.675 sec on old lenovo
 
 
 # set parameters:

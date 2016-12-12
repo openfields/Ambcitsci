@@ -13,7 +13,7 @@ load('./data/scenarios.Rdata')
 
 # create object for simulation output
 my_fun <- function(){
-  list(d=array(dim=c(50,2,5), data=NA))
+  list(d=array(dim=c(50,2,500), data=NA))
 }
 replicate(361, my_fun(), simplify=TRUE)->out
 

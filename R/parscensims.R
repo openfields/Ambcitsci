@@ -11,6 +11,9 @@
 # load data
 source('./R/popsim.r')
 source('./R/bprob.r')
+source('./R/fecund.r')
+source('./R/surv.r')
+source('./R/migrate.r')
 load('./data/scenarios.Rdata')
 
 # create object for simulation output
@@ -21,7 +24,7 @@ replicate(361, my_fun(), simplify=TRUE)->out
 
 # list option
 # loop through first 100 scenarios, going to do 500 iterations
-system.time(for(i in 1:100){
+system.time(for(i in 101:200){
   
    # pull in road xing guard data from scenarios object
   gds_ai <- c(scenarios$night1_adult_in_migtation[i],scenarios$night2_adult_inout_migtation[i],scenarios$night3_adult_inout_migtation[i])

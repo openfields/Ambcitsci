@@ -24,7 +24,7 @@ replicate(361, my_fun(), simplify=TRUE)->out
 
 # list option
 # loop through first 100 scenarios, going to do 500 iterations
-system.time(for(i in 101:200){
+system.time(for(i in 201:361){
   
    # pull in road xing guard data from scenarios object
   gds_ai <- c(scenarios$night1_adult_in_migtation[i],scenarios$night2_adult_inout_migtation[i],scenarios$night3_adult_inout_migtation[i])
@@ -38,6 +38,6 @@ system.time(for(i in 101:200){
             rmort_met = 0.0407, ng_met = gd_m)
     
       } #j
-    if(i%%1==0) {save(out, file='./data/outdata.Rdata')}
+    if(i%%100==0) {save(out, file='./data/outdata.Rdata')}
   }) #i
 

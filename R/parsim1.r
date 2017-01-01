@@ -1,9 +1,15 @@
 # script to do population simulations in parallel
 
-library(foreach)
-library(doParallel)
-library(parallel)
-
+# moved library and source statements to env_setup.r
+# library(foreach)
+# library(doParallel)
+# library(parallel)
+# source('./R/popsim.r')
+# source('./R/surv.r')
+# source('./R/bprob.r')
+# source('./R/migrate.r')
+# source('./R/fecund.r')
+# load('./data/pars.Rdata')
 numCores <- detectCores()-1
 cl <- makeCluster(numCores)
 registerDoParallel(cl)
@@ -22,3 +28,4 @@ system.time(results <- foreach(i=inputs) %dopar% {
   processInput(i)
   }
 ) # ~ 1 minute for 500 simulations
+

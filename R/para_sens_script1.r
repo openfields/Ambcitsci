@@ -1,7 +1,7 @@
 # script to do sensitivity analyses with no road mortality
 
 # create matrix with parameter values for no road mortality
-load('./data/pars.Rdata') -> pars
+load('./data/pars.Rdata')
 spars.NRM <- pars
 spars.NRM$a_rmort <- c(0,0,0)
 spars.NRM$rmort_met <- c(0,0,0)

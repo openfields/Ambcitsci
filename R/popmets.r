@@ -25,7 +25,7 @@ popmets <- function(simlist, qe){
   mean(outs[,2]) -> alam
   var(outs[,3]) -> vlam
   t.ext <- outs[,4]
-  t.ext[is.na(t.ext)] <- 50
+  #t.ext[is.na(t.ext)] <- 50
   mean(t.ext) -> tte
   sum(outs[,5])/length(outs[,5]) -> pe
   return(c(amp,alam,vlam,tte,pe))

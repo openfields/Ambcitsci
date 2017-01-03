@@ -11,7 +11,7 @@ pext <- function(mat, qe){
   if(length(ex)>0) ext <- 1 
     else {
       ext <- 0
-      t <- 50
+      t <- dim(mat)[1]
     }
   return(list(t=t, ext=ext))
   

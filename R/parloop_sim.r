@@ -18,7 +18,7 @@ counter2 <- 1
 j <- 1:400  # change to 400
 
 system.time(
-for(i in 1:3){  # loop over 3 scenarios
+for(i in 1:361){  # loop over 3 scenarios
   # pull in road xing guard data from scenarios object
   gds_ai <- c((scenarios$persons_adultmigtation[i]*scenarios$night1_adult_in_migtation[i]),(scenarios$persons_adultmigtation[i]*scenarios$night2_adult_inout_migtation[i]),
               (scenarios$persons_adultmigtation[i]*scenarios$night3_adult_inout_migtation[i]))
@@ -42,6 +42,6 @@ for(i in 1:3){  # loop over 3 scenarios
     paraloop(j)
   }
   # write output 
-  #assign(paste("cs",i,sep=""),popmets(results,5))
+  assign(paste("cs",i,sep=""),popmets(results,5))
 }
 )

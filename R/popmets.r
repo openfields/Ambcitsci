@@ -13,7 +13,7 @@ popmets <- function(simlist, qe){
   # preliminary output: columns for summary data from each simulation
   outs <- matrix(0, nrow=length(simlist), ncol=5)
   
-  for(i in 1:length(simlist)){
+  for(i in 1:(length(simlist)-1)){
     minpop(simlist[[i]]) -> outs[i,1] # minimum population size from simulations
     mean(lampop(simlist[[i]],qe)$lam) -> outs[i,2] # avg lambda for simulation
     lampop(simlist[[i]],qe)$vlam -> outs[i,3] # variance of lambda

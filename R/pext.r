@@ -13,6 +13,6 @@ pext <- function(mat, qe){
       ext <- 0
       t <- 50
     }
-  return(list(t=ex[1], ext=ext))
+  return(list(t=t, ext=ext))
   
 }

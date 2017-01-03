@@ -71,10 +71,12 @@ system.time(
     processInput(i)
   }
   # ~ 1 minute for 500 simulations
-  assign(paste("s.",spNR$scennam[j],sep=""),popmets(results[[1:499]],5))
+  assign(paste("s.",spNR$scennam[j],sep=""),popmets(results,5))
 } 
 )
-#} # k
+
+
+rbind(s.ap_dphi_hi, s.ap_dphi_lo)
 
 
 # do for last value: high fecundity
@@ -92,6 +94,12 @@ system.time(
 results2 <- foreach(i=inputs) %dopar% {
   processInput(i)
 }
+
+
+
+rbind(s.ap_dphi_hi,s.ap_dphi_lo,s.dphi_sa_hi,s.dphi_sa_lo,s.fec_hi,s.fec_lo,s.initad_hi,s.initad_low,s.initsa_hi,s.initsa_lo,s.lmort_hi,s.lmort_lo,s.nb_dphi_hi,
+      s.nb_dphi_lo,s.pr_b_hi,s.pr_b_low,s.avg) -> sen_rm0
+
 
 assign(paste("sim8.2"),popmets(results2,5))
 

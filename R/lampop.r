@@ -4,7 +4,7 @@ lampop <- function(dat,qe){
   dat <- apply(dat,1,sum)
   # set quasi-ext threshold
   dat[which(dat<qe)] <- 0
-  dat[which(dat==0)] -> extind
+  which(dat==0) -> extind
   
   print(extind)
   

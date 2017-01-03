@@ -8,7 +8,11 @@ pext <- function(mat, qe){
   tot <- apply(mat, 1, sum)
   which(tot<=qe) -> ex
 
-  if(length(ex)>0) ext <- 1 else ext <- 0
+  if(length(ex)>0) ext <- 1 
+    else {
+      ext <- 0
+      t <- 50
+    }
   return(list(t=ex[1], ext=ext))
   
 }

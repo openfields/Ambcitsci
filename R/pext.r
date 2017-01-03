@@ -7,9 +7,8 @@ pext <- function(mat, qe){
   #         t: time at which extinction occurs
   tot <- apply(mat, 1, sum)
   which(tot<=qe) -> ex
-  t<-ex[1]
-  if(length(t)>0) ext <- 1
-  else ext <- 1
-  return(list(t=t, ext=ext))
+
+  if(length(ex)>0) ext <- 1 else ext <- 0
+  return(list(t=ex[1], ext=ext))
   
 }

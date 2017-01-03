@@ -6,7 +6,7 @@ lampop <- function(dat,qe){
   dat[which(dat<qe)] <- 0
   which(dat==0) -> extind
   
-  print(extind)
+  # print(extind)
   
   tmp1 <- dat[1:length(dat)-1]
   tmp2 <- dat[2:length(dat)]
@@ -15,6 +15,6 @@ lampop <- function(dat,qe){
     lam <- lam[1:(extind[1]-1)]
   }
   
-  print(lam)
+  # print(lam)
   return(list(lam=lam, vlam=var(lam)))
 }

@@ -12,7 +12,7 @@ lampop <- function(dat,qe){
   tmp2 <- dat[2:length(dat)]
   tmp2/tmp1 -> lam
   if(length(which(dat==0))>=1) {
-    lam <- lam[1:extind[1]]
+    lam <- lam[1:(extind[1]-1)]
   }
   
   print(lam)

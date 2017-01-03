@@ -4,6 +4,12 @@ popmets <- function(simlist, qe){
 # 2. calculate lambda
 # 3. calculate pr(ext) and time to ext
   
+  # source functions
+  source('./R/lampop.r')
+  source('./R/pext.r')
+  source('./R/minpop.r')
+  
+  
   # preliminary output: columns for summary data from each simulation
   outs <- matrix(0, nrow=length(simlist), ncol=5)
   

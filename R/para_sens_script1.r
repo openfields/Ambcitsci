@@ -1,6 +1,16 @@
 # script to do sensitivity analyses with no road mortality
 
 # create matrix with parameter values for no road mortality
+source('./R/popsim.r')
+source('./R/surv.r')
+source('./R/bprob.r')
+source('./R/migrate.r')
+source('./R/fecund.r')
+source('./R/popmets.r')
+source('./R/minpop.r')
+source('./R/lampop.r')
+source('./R/pext.r')
+
 load('./data/pars.Rdata')
 spars.NRM <- pars
 spars.NRM$a_rmort <- c(0,0,0)
@@ -68,3 +78,12 @@ assign(paste("sim",k,".",m,sep=""),popmets(results,5))
          a_out_nguard = c(0,0,0), met_night_prob = c(0.333,0.333,0.334), rmort_met = 0, 
          ng_met = c(0,0,0)) 
 } #procIn
+  
+  
+results2 <- foreach(i=inputs) %dopar% {
+  processInput(i)
+}
+
+assign(paste("sim8.2"),popmets(results2,5))
+
+rbind(sim1.1,sim1.2,sim2.1,sim2.2,sim3.1,sim3.2,sim4.1,sim4.2,sim5.1,sim5.2,sim6.1,sim6.2,sim7.1,sim7.2,sim8.1,sim8.2) -> psens

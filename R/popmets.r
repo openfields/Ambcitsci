@@ -15,7 +15,7 @@ popmets <- function(simlist, qe){
   
   for(i in 1:length(simlist)){
     minpop(simlist[[i]]) -> outs[i,1] # minimum population size from simulations
-    mean(lampop(simlist[[i]])$lam,qe) -> outs[i,2] # avg lambda for simulation
+    mean(lampop(simlist[[i]],qe)$lam) -> outs[i,2] # avg lambda for simulation
     lampop(simlist[[i]],qe)$vlam -> outs[i,3] # variance of lambda
     pext(simlist[[i]],qe)$t -> outs[i,4] #time to extinction: NA means persistence, t means year of extinction 
     pext(simlist[[i]],qe)$ext -> outs[i,5] # extinction: 0 means persistence, 1 means extinction occurred

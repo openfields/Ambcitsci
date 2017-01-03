@@ -5,11 +5,11 @@ source('./R/surv.r')
 source('./R/migrate.r')
 load('./data/scenarios.Rdata')
 
-# create object for simulation output
-my_fun <- function(){
-  list(d=array(dim=c(50,2,500), data=NA))
-}
-replicate(361, my_fun(), simplify=TRUE)->out
+# # create object for simulation output
+# my_fun <- function(){
+#   list(d=array(dim=c(50,2,500), data=NA))
+# }
+# replicate(361, my_fun(), simplify=TRUE)->out
 
 # list option
 # loop through first 100 scenarios, going to do 500 iterations
